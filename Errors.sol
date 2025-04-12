@@ -31,7 +31,7 @@ contract Errors {
     error MyError(address caller, uint i); // 括号可以加入参数，比如地址和变量
     function testCustomError(uint _i) public view {
         if (_i > 10){
-            revert(msg.sender, _i);
+            revert MyError(msg.sender, _i);
         } 
     }
 }
